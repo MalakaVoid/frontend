@@ -1,0 +1,29 @@
+@import './variables';
+
+.reviews{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    .review{
+        max-width: 468px;
+        min-width: 300px;
+        width: 100%;
+        font-size: 1.5rem;
+        border-radius: $border-radius-primary;
+        background-color: $color-support-white;
+        color: $color-primary-black;
+        padding: 20px 30px;
+        box-sizing: border-box;
+
+        &__title{
+            text-align: center;
+        }
+    }
+}

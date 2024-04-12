@@ -1,0 +1,30 @@
+@import './variables';
+@media screen and (min-width: 768px) {
+    .title{
+        &__text{
+            font-size: 4rem;
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    .title{
+        &__text{
+            font-size: 2.5rem;
+        }
+    }
+}
+.title{
+    margin: 45px auto 100px auto;
+    max-width: 1300px;
+    width: 100%;
+    padding: 10px;
+    background-color: $color-support-black;
+    border-radius: $border-radius-primary;
+    text-align: center;
+    box-sizing: border-box;
+
+    &__text{
+        color: $color-primary-white;
+        text-transform: uppercase;
+    }
+}
