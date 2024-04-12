@@ -6,7 +6,11 @@ export default async function Review() {
     {cache: 'no-store'}
   );
   const data = await res.json();
-
+  const xssPrevent = function(text){
+    return text
+          .replace("<script>", "&lt;script&gt;")
+          .replace("</script>", "&lt;&#47;script&gt;");
+  }
   return (
     <>
         <div className="reviews">
@@ -19,7 +23,7 @@ export default async function Review() {
                   </h3>
                   <div 
                     className="review__content" 
-                    dangerouslySetInnerHTML={{__html: review.text}}>
+                    dangerouslySetInnerHTML={{__html: xssPrevent(review.text)}}>
                   </div>
                 </div>
               )
