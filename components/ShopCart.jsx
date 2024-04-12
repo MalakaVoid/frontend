@@ -1,30 +1,14 @@
 "use client"
 import { useMask } from '@react-input/mask';
-import React from 'react';
+import React, { useState } from 'react';
 export default function ShopCart() {
 
     const inputRef = useMask({ mask: '+7 (___) ___-__-__', replacement: { _: /\d/ }, showMask: true });
+    const [cart, setCart] = useState({
+        products: [],
+        total: 0,
+    });
 
-    const data = [
-        {
-            id: 1,
-            name: 'Apple',
-            price: 10,
-            quantity: 1
-        },
-        {
-            id: 2,
-            name: 'Apple 2',
-            price: 9000,
-            quantity: 21
-        },
-        {
-            id: 3,
-            name: 'Apple 3',
-            price: 1000,
-            quantity: 3
-        }
-    ];
 
   return (
     <>
