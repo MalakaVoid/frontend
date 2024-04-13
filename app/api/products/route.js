@@ -15,7 +15,7 @@ export async function GET(request, {params}) {
     let result_products = data.slice((page-1)*page_size, page_size*page);
     let result = {
         page: page,
-        amount: page_size,
+        amount: result_products.length,
         total: data.length,
         items: result_products
     }

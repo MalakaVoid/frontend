@@ -3,6 +3,8 @@
 @import './home';
 @import './shop_cart';
 @import './products';
+@import './loader';
+@import './message';
 
 /* RESET HTML CSS */
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -61,4 +63,15 @@ main{
     box-sizing: border-box;
     padding: 0 15px;
     padding-bottom: 100px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
