@@ -2,6 +2,7 @@
 "use client";
 import { useMask } from '@react-input/mask';
 import { useEffect } from 'react';
+import styles from '@/styles/ShopCart.module.scss';
 
 
 export default function ShopCart({ cart, clearCart, showMessage }) {
@@ -56,26 +57,26 @@ export default function ShopCart({ cart, clearCart, showMessage }) {
 
     return (
         <>
-            <div className="shop_cart">
-                <h1 className="shop_cart__title">
+            <div className={styles.shop_cart}>
+                <h1 className={styles.shop_cart__title}>
                     Добавленные товары
                 </h1>
-                <div className="shop_cart__items">
+                <div className={styles.shop_cart__items}>
                     {
                         cart.products.map(item => {
                             return (
                                 <>
-                                    <div className="shop_cart__item-name">{item.title}</div>
-                                    <div className="shop_cart__item-qty">x{item.qty}</div>
-                                    <div className="shop_cart__item-price">{item.price * item.qty} ₽ </div>
+                                    <div className={styles.shop_cart__item_name}>{item.title}</div>
+                                    <div className={styles.shop_cart__item_qty}>x{item.qty}</div>
+                                    <div className={styles.shop_cart__item_price}>{new Intl.NumberFormat("ru").format(item.price * item.qty)} ₽ </div>
                                 </>
                             )
                         })
                     }
                 </div>
-                <div className="shop_cart__order">
-                    <input className='shop_cart__order-phone' name='phone' onChange={onPhoneChange} ref={inputRef} />
-                    <button className="shop_cart__order-button" onClick={makeOrder}>
+                <div className={styles.shop_cart__order}>
+                    <input className={styles.shop_cart__order_phone} name='phone' onChange={onPhoneChange} ref={inputRef} />
+                    <button className={styles.shop_cart__order_button} onClick={makeOrder}>
                         Заказать
                     </button>
                 </div>

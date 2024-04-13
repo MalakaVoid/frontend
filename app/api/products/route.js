@@ -19,7 +19,7 @@ export async function GET(request, {params}) {
         total: data.length,
         items: result_products
     }
-
+    
     return new Response(JSON.stringify(result));
 }
 
@@ -32,10 +32,10 @@ export async function GET(request, {params}) {
 // function createData (){
 //     let data = [];
 //     for (let i =0; i < 30; i++) {
-    
+//         let image_url = `http://localhost:3000/${getRandomInt(1, 3)}.png`;
 //         data.push({
 //             id: i,
-//             image_url: '/monke.png',
+//             image_url: image_url,
 //             title: `PRODUCT ${i}`,
 //             description: "some text ".repeat(getRandomInt(1, 20)),
 //             price: getRandomInt(1000, 20000)
@@ -70,4 +70,6 @@ export async function GET(request, {params}) {
 //             })
 //         }
 //     }
+
+//     return data;
 // }

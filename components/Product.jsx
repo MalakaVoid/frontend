@@ -1,6 +1,7 @@
 // "use client"
 
 import React, { useState, useEffect } from 'react'
+import styles from '@/styles/Product.module.scss'
 
 export default function Product({ product_info, cart, changeCart }) {
 
@@ -50,34 +51,34 @@ export default function Product({ product_info, cart, changeCart }) {
 
     return (
         <>
-            <div className="product">
-                <div className="product__image">
-                    <img src="/monke.png" alt="" />
+            <div className={styles.product}>
+                <div className={styles.product__image}>
+                    <img src={product_info.image_url} alt="" />
                 </div>
-                <h3 className="product__title">
+                <h3 className={styles.product__title}>
                     {product_info.title}
                 </h3>
-                <p className="product__desc">
+                <p className={styles.product__desc}>
                     {product_info.description}
                 </p>
-                <div className="product__price">
-                    Цена: {product_info.price}₽
+                <div className={styles.product__price}>
+                    Цена: {new Intl.NumberFormat("ru").format(product_info.price)}₽
                 </div>
                 {
                     !!quantity ? (
-                        <div className="product__amount">
-                            <button className="product__button product__button-increase" onClick={handleDecrease}>
+                        <div className={styles.product__amount}>
+                            <button className={`${styles.product__button} ${styles.product__button_increase}`} onClick={handleDecrease}>
                                 -
                             </button>
-                            <input name='quantity' type="number" value={quantity} onChange={handleChangeQty} onBlur={handleQtyFoucsOut} className='product__counter' />
-                            <button className="product__button product__button-decrease" onClick={handleIncrease}>
+                            <input name='quantity' type="number" value={quantity} onChange={handleChangeQty} onBlur={handleQtyFoucsOut} className={styles.product__counter} />
+                            <button className={`${styles.product__button} ${styles.product__button_decrease}`}  onClick={handleIncrease}>
                                 +
                             </button>
                         </div>
                     ) :
                     (
-                        <div className="product__buttons">
-                            <button className="product__button product__button-buy" onClick={handleBuy}>
+                        <div className={styles.product__buttons}>
+                            <button className={`${styles.product__button} ${styles.product__button_buy}`} onClick={handleBuy}>
                                 КУПИТЬ
                             </button>
                         </div>

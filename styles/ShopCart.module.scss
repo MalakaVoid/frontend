@@ -62,8 +62,8 @@
         gap: 20px;
         flex-wrap: wrap;
 
-        &-phone,
-        &-button{
+        &_phone,
+        &_button{
             // width: 100%;
             flex-grow: 1;
             display: block;
@@ -77,12 +77,12 @@
             border: none;
         }
 
-        &-phone{
+        &_phone{
             flex-basis: calc(60%);
             min-width: 280px;
             width: 280px;
         }
-        &-button{
+        &_button{
             flex-basis: calc(40% - 20px);
             min-width: 200px;
             text-transform: uppercase;

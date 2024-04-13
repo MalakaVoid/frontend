@@ -17,12 +17,6 @@
         animation: prixClipFix 2s linear infinite ;
     }
 }
-.loader__container{
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
 
 @keyframes rotate {
     100%   {transform: rotate(360deg)}

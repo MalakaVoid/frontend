@@ -3,6 +3,7 @@ import Products from "@/components/Products";
 import Reviews from "@/components/Reviews";
 import ShopCart from "@/components/ShopCart";
 import { Suspense } from "react";
+import styles from '@/styles/Home.module.scss';
 
 export default async function Home() {
 
@@ -17,8 +18,8 @@ export default async function Home() {
 	return (
 		<>
 
-			<div className="title">
-				<h1 className="title__text">
+			<div className={styles.title}>
+				<h1 className={styles.title__text}>
 					Тестовое задание
 				</h1>
 			</div>

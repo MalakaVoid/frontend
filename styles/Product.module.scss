@@ -1,14 +1,4 @@
-
-.products{
-    width: 100%;
-    max-width: 1300px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 35px;
-    margin: 0 auto;
-    margin-top: 50px;
-    box-sizing: border-box;
-}
+@import './variables';
 
 .product{
     display: flex;
@@ -74,15 +64,15 @@
         outline: none;
         border: none;
 
-        &-buy{
+        &_buy{
             // display: none;
             width: 100%;
             margin-top: 30px;
             padding: 10px 15px;
         }
 
-        &-increase,
-        &-decrease{
+        &_increase,
+        &_decrease{
             height: 48px;
             width: 48px;
         }
@@ -106,6 +96,8 @@
         background-color: $color-primary-black;
         border-radius: $border-radius-primary;
         box-sizing: border-box;
+        outline: none;
+        border: none;
     }
 
 }

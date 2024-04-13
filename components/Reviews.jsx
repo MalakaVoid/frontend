@@ -1,4 +1,4 @@
-
+import styles from '@/styles/Reviews.module.scss';
 export default async function Review() {
 
 	const res = await fetch(
@@ -15,16 +15,16 @@ export default async function Review() {
 
 	return (
 		<>
-			<div className="reviews">
+			<div className={styles.reviews}>
 				{
 					data.map(review => {
 						return (
-							<div className="review" key={review.id}>
-								<h3 className="review__title">
+							<div className={styles.review} key={review.id}>
+								<h3 className={styles.review__title}>
 									Отзыв {review.id}
 								</h3>
 								<div
-									className="review__content"
+									className={styles.review__content}
 									dangerouslySetInnerHTML={{ __html: xssPrevent(review.text) }}>
 								</div>
 							</div>

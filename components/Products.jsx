@@ -4,6 +4,7 @@ import Product from "./Product"
 import ShopCart from "./ShopCart";
 import Loader from "./Loader";
 import Message from "./Message";
+import styles from '@/styles/Products.module.scss';
 
 
 export default function Products({ first_page, pageSize }) {
@@ -65,7 +66,6 @@ export default function Products({ first_page, pageSize }) {
         }
 
         if (cart.products.find(item => item.id === product.id)) {
-
             const index = cart.products.findIndex(item => item.id === product.id);
             const newProducts = [...cart.products];
             newProducts[index].qty = qty;
@@ -73,7 +73,6 @@ export default function Products({ first_page, pageSize }) {
             setCart(newCart);
             window.localStorage.setItem('cart', JSON.stringify(newCart));
             return;
-
         }
 
         let newCart = {
@@ -124,19 +123,17 @@ export default function Products({ first_page, pageSize }) {
 
     }
 
-
-
     return (
         <>
             <ShopCart cart={cart} clearCart={clearCart} showMessage={showMessage} />
-            <section className="products">
+            <section className={styles.products}>
                 {
                     products.map((product) => (
                         <Product key={product.id} product_info={product} cart={cart} changeCart={changeCart} />
                     ))
                 }
             </section>
-            {hasMore && <div className="loader__container" ref={elementRef}><Loader /></div>}
+            {hasMore && <div className={styles.products__loader} ref={elementRef}><Loader /></div>}
             {message && <Message onClick={hideMessage} text={message.text} title={message.title} />}
         </>
     )
