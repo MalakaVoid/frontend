@@ -64,6 +64,7 @@ export default function Product({ product_info, cart, changeCart }) {
                 <div className={styles.product__price}>
                     Цена: {new Intl.NumberFormat("ru").format(product_info.price)}₽
                 </div>
+
                 {
                     !!quantity ? (
                         <div className={styles.product__amount}>

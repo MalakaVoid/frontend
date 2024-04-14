@@ -1,11 +1,4 @@
 @import './variables';
-// @import './reviews';
-// @import './home';
-// @import './shop_cart';
-// @import './products';
-// @import './loader';
-// @import './message';
-
 /* RESET HTML CSS */
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
@@ -53,12 +46,13 @@ body{
     box-sizing: border-box;
     font-family: 'Inter';
     overflow-x: hidden;
+	position: relative;
 }
 
 main{
     width: 100%;
     max-width: 2000px;
-    min-width: 280px;
+    // min-width: 280px;
     margin: 0 auto;
     box-sizing: border-box;
     padding: 0 15px;

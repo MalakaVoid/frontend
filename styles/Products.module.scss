@@ -10,11 +10,12 @@
     margin-top: 50px;
     box-sizing: border-box;
 
-    &__loader{
-        padding: 30px;
-        display: flex !important;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-    }
+}
+
+.products__loader{
+    padding: 30px 0;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
