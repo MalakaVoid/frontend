@@ -11,7 +11,7 @@ export default function ShopCart({ cart, clearCart, showMessage }) {
 
     useEffect(() => {
         const phone = window.localStorage.getItem('phone');
-        inputRef.current.value = phone ? phone : '';
+        inputRef.current.value = phone ? phone : '+7 (___) ___-__-__';
     }, [])
 
     const makeOrder = () => {

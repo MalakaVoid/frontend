@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic'
 import Loader from "@/components/Loader";
 import Products from "@/components/Products";
 import Reviews from "@/components/Reviews";
