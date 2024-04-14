@@ -7,7 +7,7 @@ import Message from "./Message";
 import styles from '@/styles/Products.module.scss';
 
 
-export default function Products({ first_page, pageSize }) {
+export default function Products({ firstPage, pageSize }) {
 
     const [cart, setCart] = useState({ products: [] });
     const [hasMore, setHasMore] = useState(true);
@@ -19,7 +19,7 @@ export default function Products({ first_page, pageSize }) {
 
     useEffect(() => {
         loadCart();
-        setProducts(first_page.items);
+        setProducts(firstPage.items);
     }, []);
 
     useEffect(() => {
@@ -108,7 +108,7 @@ export default function Products({ first_page, pageSize }) {
     const fetchProducts = async () => {
 
         const res = await fetch(
-            'http://localhost:3000/api/products?' + new URLSearchParams({ page: page, page_size: pageSize }),
+            "/api/products?" + new URLSearchParams({ page: page, page_size: pageSize }),
             { cache: 'no-store' }
         );
         const data = await res.json();
@@ -118,7 +118,7 @@ export default function Products({ first_page, pageSize }) {
         } else {
             setProducts(prev => [...prev, ...data.items]);
             setPage(prev => prev + 1);
-            // console.log(products);
+            console.log(products);
         }
 
     }

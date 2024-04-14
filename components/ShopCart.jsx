@@ -19,7 +19,8 @@ export default function ShopCart({ cart, clearCart, showMessage }) {
         let regex = /^([+]?[0-9\s-\(\)]{3,25})*$/i;
 
         if (!regex.test(phoneNumber)) {
-            inputRef.current.style.backgroundColor = 'red';
+            inputRef.current.classList.add(styles.error);
+            return;
         }
 
         let cleanPhone = phoneNumber.replace(/[&\/\\#,+()$~%.'":*?<>{}-\s]/g, '');
@@ -33,7 +34,7 @@ export default function ShopCart({ cart, clearCart, showMessage }) {
     }
 
     const makeOrderRequest = async (order) => {
-        const response = await fetch('http://localhost:3000/api/order', {
+        const response = await fetch('/api/order', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json;charset=utf-8'
@@ -53,6 +54,11 @@ export default function ShopCart({ cart, clearCart, showMessage }) {
 
     const onPhoneChange = () => {
         window.localStorage.setItem('phone', inputRef.current.value);
+        let regex = /^([+]?[0-9\s-\(\)]{3,25})*$/i;
+
+        if (regex.test(inputRef.current.value)) {
+            inputRef.current.classList.remove(styles.error);
+        }
     }
 
     return (

@@ -2,7 +2,7 @@ import styles from '@/styles/Reviews.module.scss';
 export default async function Review() {
 
 	const res = await fetch(
-		'http://localhost:3000/api/reviews',
+		'http://127.0.0.1:3000/api/reviews',
 		{ cache: 'no-store' }
 	);
 	const data = await res.json();

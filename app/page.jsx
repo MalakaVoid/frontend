@@ -10,7 +10,7 @@ export default async function Home() {
 	const pageSize = 5;
 
 	const res = await fetch(
-		'http://localhost:3000/api/products?' + new URLSearchParams({ page: 1, page_size: pageSize }),
+		'http://127.0.0.1:3000/api/products?' + new URLSearchParams({ page: 1, page_size: pageSize }),
 		{ cache: 'no-store' }
 	);
 	const data = await res.json();
@@ -27,7 +27,7 @@ export default async function Home() {
 				<Reviews />
 			</Suspense>
 
-			<Products first_page={data} pageSize={pageSize} />
+			<Products firstPage={data} pageSize={pageSize} />
 
 		</>
 	)

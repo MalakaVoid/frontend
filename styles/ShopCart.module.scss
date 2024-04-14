@@ -81,7 +81,12 @@
             flex-basis: calc(60%);
             min-width: 280px;
             width: 280px;
+
+            &.error{
+                background-color: rgb(255, 41, 41);
+            }
         }
+
         &_button{
             flex-basis: calc(40% - 20px);
             min-width: 200px;
